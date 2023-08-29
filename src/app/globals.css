@@ -27,3 +27,25 @@ body {
     background-color: #fff;
     color: black;
 }
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #010911;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4A4A4A;
+  border-radius: 30px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

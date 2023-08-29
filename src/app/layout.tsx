@@ -1,8 +1,11 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Quattrocento, Quattrocento_Sans } from 'next/font/google'
+import Navbar from './components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] })
+const quattrocento = Quattrocento({weight: "400", subsets: ['latin'], variable: "--font-quattrocento"})
+const quattrocentoSans = Quattrocento_Sans({ weight: "400", subsets: ['latin'], variable: "--font-quattrocento-sans" })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${quattrocento.variable} ${quattrocentoSans.variable} bg-[#ffe5b4] font-quattrocento-sans`}>
+        <Navbar />
+        <main>
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
