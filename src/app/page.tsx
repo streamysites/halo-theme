@@ -34,8 +34,8 @@ export default async function Home() {
 
 
     // const broadcasterID = await useBroadcasterID("splixter");
-    // const twitchClips = await useTwitchClips("splixter");
-    // console.log(twitchClips);
+    const twitchClips = await useTwitchClips("splixter");
+    console.log(twitchClips);
     // console.log(broadcasterID)
 
   return (
@@ -77,7 +77,7 @@ export default async function Home() {
         </div>
         <div className="flex flex-col w-full">
           <h3 className="font-quattrocento text-6xl py-8">Latest Twitch Clips</h3>
-          {/* <TwitchClips twitchClips={twitchClips} /> */}
+          <TwitchClips twitchClips={twitchClips} />
 
 
 
