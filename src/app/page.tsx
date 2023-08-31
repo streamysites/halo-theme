@@ -6,6 +6,8 @@ import TwitchClips from "./components/TwitchClips";
 import useBroadcasterID from "./useBroadcasterID";
 import useTwitchClips from "./useTwitchClips";
 
+
+
 export default async function Home() {
   const imageArray = [
     {"src": "https://images.squarespace-cdn.com/content/v1/5bccd5717788971625e09ffc/1556577767604-8C9DRPVWF53XWNFX0DOR/v_franklin_chop_2048x1536.jpg?format=1500w", "name": "Grand Theft Auto V"},
@@ -17,10 +19,23 @@ export default async function Home() {
   ];
 
 
+  const res = await fetch(`https://dev.streamy.pro/api/get-site-info`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        "user_id": process.env.STREAMY_USER_ID,
+      }),
+  })
+  const data = await res.json()
+  const siteInfo = data[0];
+  console.log(siteInfo)
+
 
     // const broadcasterID = await useBroadcasterID("splixter");
-    // const twitchClips = await useTwitchClips("splixter");
-    // console.log(twitchClips);
+    const twitchClips = await useTwitchClips("splixter");
+    console.log(twitchClips);
     // console.log(broadcasterID)
     console.log(process.env.TWITCH_CLIENT_ID);
     console.log(process.env.TWITCH_ACCESS_TOKEN);
@@ -33,8 +48,8 @@ export default async function Home() {
         <h3 className="font-quattrocento text-6xl py-8">About</h3>
         <div className="flex w-full">
           <div className="flex flex-col justify-center w-1/2 text-2xl">
-            <p>{`Hey! I'm {process.env.DISPLAY_NAME}, a variety streamer on Twitch and content creator on Youtube.`}</p>
-            <p>{process.env.BIO}</p>
+            <p>{`Hey! I'm ${siteInfo.display_name}, a variety streamer on Twitch and content creator on Youtube.`}</p>
+            <p>{siteInfo.bio}</p>
 
           </div>
           <div className="flex flex-col w-1/2 items-center">
@@ -55,7 +70,7 @@ export default async function Home() {
           <h3 className="font-quattrocento text-6xl py-8">Latest Youtube Videos</h3>
           <iframe id="ytplayer"
           className="w-full h-[500px]"
-            src={`https://www.youtube.com/embed?listType=user_uploads&list=${process.env.YOUTUBE_CHANNEL_NAME }`}
+            src={`https://www.youtube.com/embed?listType=user_uploads&list=${siteInfo.youtube_channel_name}`}
             >  
           </iframe>
           {/* <YoutubeVideos /> */}
@@ -64,7 +79,7 @@ export default async function Home() {
         </div>
         <div className="flex flex-col w-full">
           <h3 className="font-quattrocento text-6xl py-8">Latest Twitch Clips</h3>
-          {/* <TwitchClips twitchClips={twitchClips} /> */}
+          <TwitchClips twitchClips={twitchClips} />
 
 
 
