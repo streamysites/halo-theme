@@ -19,7 +19,7 @@ export default async function Home() {
 
 
     // const broadcasterID = await useBroadcasterID("splixter");
-    const twitchClips = await useTwitchClips(process.env.TWITCH_CHANNEL_NAME);
+    const twitchClips = await useTwitchClips("splixter");
     console.log(twitchClips);
     // console.log(broadcasterID)
     console.log(process.env.TWITCH_CLIENT_ID);
