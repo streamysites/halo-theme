@@ -19,7 +19,7 @@ export default async function Home() {
 
 
     // const broadcasterID = await useBroadcasterID("splixter");
-    const twitchClips = await useTwitchClips("splixter");
+    const twitchClips = await useTwitchClips(process.env.TWITCH_CHANNEL_NAME);
     console.log(twitchClips);
     // console.log(broadcasterID)
     console.log(process.env.TWITCH_CLIENT_ID);
@@ -33,9 +33,8 @@ export default async function Home() {
         <h3 className="font-quattrocento text-6xl py-8">About</h3>
         <div className="flex w-full">
           <div className="flex flex-col justify-center w-1/2 text-2xl">
-            <p>My name is John and welcome to my homepage!</p>
-            <p>I play a variety of games and stream on twitch and youtube.</p>
-            <p>I'm from New York, but now I'm living up in the cold north of Canada. Feel free to reach out to me on any of my platforms!</p>
+            <p>Hey! I'm {process.env.DISPLAY_NAME}, a variety streamer on Twitch and content creator on Youtube.</p>
+            <p>{process.env.BIO}</p>
 
           </div>
           <div className="flex flex-col w-1/2 items-center">
@@ -56,7 +55,7 @@ export default async function Home() {
           <h3 className="font-quattrocento text-6xl py-8">Latest Youtube Videos</h3>
           <iframe id="ytplayer" type="text/html"
           className="w-full h-[500px]"
-            src="https://www.youtube.com/embed?listType=user_uploads&list=splixter512"
+            src={`https://www.youtube.com/embed?listType=user_uploads&list=${process.env.YOUTUBE_CHANNEL_NAME }`}
             frameborder="0">  
           </iframe>
           {/* <YoutubeVideos /> */}
