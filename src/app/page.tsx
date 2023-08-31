@@ -33,7 +33,7 @@ export default async function Home() {
         <h3 className="font-quattrocento text-6xl py-8">About</h3>
         <div className="flex w-full">
           <div className="flex flex-col justify-center w-1/2 text-2xl">
-            <p>Hey! I'm {process.env.DISPLAY_NAME}, a variety streamer on Twitch and content creator on Youtube.</p>
+            <p>{`Hey! I'm {process.env.DISPLAY_NAME}, a variety streamer on Twitch and content creator on Youtube.`}</p>
             <p>{process.env.BIO}</p>
 
           </div>
@@ -48,15 +48,15 @@ export default async function Home() {
             Some Games I Enjoy
           </h3>
           <ImageCarousel imageArray={imageArray} />
-          <h3>Catch my latest stream to see what I'm playing!</h3>
+          <h3>{`Catch my latest stream to see what I'm playing!`}</h3>
           <a href="/" className="py-4 px-12 border-2 border-black self-start rounded-full">Visit Stream</a>
         </div>
         <div className="flex flex-col w-full">
           <h3 className="font-quattrocento text-6xl py-8">Latest Youtube Videos</h3>
-          <iframe id="ytplayer" type="text/html"
+          <iframe id="ytplayer"
           className="w-full h-[500px]"
             src={`https://www.youtube.com/embed?listType=user_uploads&list=${process.env.YOUTUBE_CHANNEL_NAME }`}
-            frameborder="0">  
+            >  
           </iframe>
           {/* <YoutubeVideos /> */}
           <h3>Catch my out my channel for even more great videos!</h3>
@@ -74,7 +74,7 @@ export default async function Home() {
         <div className="flex flex-col w-full mb-4">
           <h3 className="font-quattrocento text-6xl py-8">Support Me</h3>
           <div className="flex flex-col w-full items-center justify-center">
-            <p className="text-6xl">If you'd like to support me here's how you can!</p>
+            <p className="text-6xl">{`If you'd like to support me here's how you can!`}</p>
             <div className="flex flex-col gap-2">
               <a href="https://donate-link" className="border-2 border-black py-4 px-12 rounded-full text-2xl text-center cursor-pointer hover:bg-black hover:border-white hover:text-white transition" target="_blank" rel="noopener noreferrer">Donate</a>
               <a href="https://merch-link" className="border-2 border-black py-4 px-12 rounded-full text-2xl text-center cursor-pointer hover:bg-black hover:border-white hover:text-white transition" target="_blank" rel="noopener noreferrer">Merch</a>
