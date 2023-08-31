@@ -48,8 +48,8 @@ export default async function Home() {
         <h3 className="font-quattrocento text-6xl py-8">About</h3>
         <div className="flex w-full">
           <div className="flex flex-col justify-center w-1/2 text-2xl">
-            <p>{`Hey! I'm ${siteInfo.display_name}, a variety streamer on Twitch and content creator on Youtube.`}</p>
-            <p>{siteInfo.bio}</p>
+            <p>{`Hey! I'm ${siteInfo?.display_name}, a variety streamer on Twitch and content creator on Youtube.`}</p>
+            <p>{siteInfo?.bio}</p>
 
           </div>
           <div className="flex flex-col w-1/2 items-center">
@@ -70,7 +70,7 @@ export default async function Home() {
           <h3 className="font-quattrocento text-6xl py-8">Latest Youtube Videos</h3>
           <iframe id="ytplayer"
           className="w-full h-[500px]"
-            src={`https://www.youtube.com/embed?listType=user_uploads&list=${siteInfo.youtube_channel_name}`}
+            src={`https://www.youtube.com/embed?listType=user_uploads&list=${siteInfo?.youtube_channel_name}`}
             >  
           </iframe>
           {/* <YoutubeVideos /> */}
