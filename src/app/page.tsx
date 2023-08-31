@@ -37,8 +37,7 @@ export default async function Home() {
     const twitchClips = await useTwitchClips("splixter");
     console.log(twitchClips);
     // console.log(broadcasterID)
-    console.log(process.env.TWITCH_CLIENT_ID);
-    console.log(process.env.TWITCH_ACCESS_TOKEN);
+
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between w-full">
