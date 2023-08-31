@@ -4,7 +4,7 @@ import useBroadcasterID from './useBroadcasterID';
 const useTwitchClips = async (username) => {
   const broadcasterID = await useBroadcasterID(username);
   const twitchClips = async (broadcasterID) => {
-    const response = await fetch(`https://api.twitch.tv/helix/clips?broadcaster_id=${broadcasterID}&first=5`, {
+    const response = await fetch(`https://api.twitch.tv/helix/clips?broadcaster_id=${broadcasterID}&first=12`, {
       headers: {
         'mode': 'no-cors',
         'credentials': 'include',

@@ -8,7 +8,7 @@ export default function HeroSection() {
 
 
   return (
-    <div className={`relative flex flex-col items-center min-h-[calc(100vh-80px)] w-full justify-center bg-cover bg-center`} style={{backgroundImage: `url(${backgroundPic.src})`}}>
+    <div className={`relative flex flex-col items-center min-h-screen w-full justify-center bg-cover bg-center`} style={{backgroundImage: `url(${backgroundPic.src})`}}>
     <div className='absolute inset-0 w-full h-full bg-black bg-opacity-70 z-0' />
     <div className='flex flex-col items-center z-10'>
     <h1 className='text-8xl font-quattrocento text-white' >Halo Theme</h1>

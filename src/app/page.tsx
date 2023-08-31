@@ -2,7 +2,7 @@ import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import ImageCarousel from "./components/ImageCarousel";
 import YoutubeVideos from "./components/YoutubeVideos";
-
+import TwitchClips from "./components/TwitchClips";
 import useBroadcasterID from "./useBroadcasterID";
 import useTwitchClips from "./useTwitchClips";
 
@@ -29,48 +29,59 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between w-full">
       <HeroSection />
       <div className="flex flex-col w-full items-center max-w-6xl">
+        <div className="flex flex-col w-full">
+        <h3 className="font-quattrocento text-6xl py-8">About</h3>
+        <div className="flex w-full">
+          <div className="flex flex-col justify-center w-1/2 text-2xl">
+            <p>My name is John and welcome to my homepage!</p>
+            <p>I play a variety of games and stream on twitch and youtube.</p>
+            <p>I'm from New York, but now I'm living up in the cold north of Canada. Feel free to reach out to me on any of my platforms!</p>
+
+          </div>
+          <div className="flex flex-col w-1/2 items-center">
+            <img className="h-[400px] w-[400px] object-cover rounded-full" src="https://images.unsplash.com/photo-1521119989659-a83eee488004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2646&q=80" />
+          </div>
+
+          </div>
+        </div>
         <div className="flex flex-col">
           <h3 className="font-quattrocento text-6xl py-8">
             Some Games I Enjoy
           </h3>
           <ImageCarousel imageArray={imageArray} />
+          <h3>Catch my latest stream to see what I'm playing!</h3>
+          <a href="/" className="py-4 px-12 border-2 border-black self-start rounded-full">Visit Stream</a>
         </div>
         <div className="flex flex-col w-full">
           <h3 className="font-quattrocento text-6xl py-8">Latest Youtube Videos</h3>
-          <iframe id="ytplayer" type="text/html" width="640" height="360"
+          <iframe id="ytplayer" type="text/html"
+          className="w-full h-[500px]"
             src="https://www.youtube.com/embed?listType=user_uploads&list=splixter512"
             frameborder="0">  
           </iframe>
           {/* <YoutubeVideos /> */}
+          <h3>Catch my out my channel for even more great videos!</h3>
+          <a href="/" className="py-4 px-12 border-2 border-black self-start rounded-full">Visit Stream</a>
         </div>
         <div className="flex flex-col w-full">
           <h3 className="font-quattrocento text-6xl py-8">Latest Twitch Clips</h3>
-          <div className="flex flex-wrap">
-            {twitchClips?.map((clip) => {
-              return (
-              <iframe 
-                key={clip.id}
-                src={`${clip.embed_url}&parent=localhost`}
-                height="350"
-                width="350"
-                allowFullScreen
-                ></iframe>
-                );
-              })}
-            </div>
-
+          <TwitchClips twitchClips={twitchClips} />
 
 
 
 
 
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full mb-4">
           <h3 className="font-quattrocento text-6xl py-8">Support Me</h3>
-          <p>If you'd like to support me here's how you can!</p>
-          <a>Donate</a>
-          <a>Merch</a>
-          <a>Patreon</a>
+          <div className="flex flex-col w-full items-center justify-center">
+            <p className="text-6xl">If you'd like to support me here's how you can!</p>
+            <div className="flex flex-col gap-2">
+              <a href="https://donate-link" className="border-2 border-black py-4 px-12 rounded-full text-2xl text-center cursor-pointer hover:bg-black hover:border-white hover:text-white transition" target="_blank" rel="noopener noreferrer">Donate</a>
+              <a href="https://merch-link" className="border-2 border-black py-4 px-12 rounded-full text-2xl text-center cursor-pointer hover:bg-black hover:border-white hover:text-white transition" target="_blank" rel="noopener noreferrer">Merch</a>
+              <a href="https://patreon.com" className="border-2 border-black py-4 px-12 rounded-full text-2xl text-center cursor-pointer hover:bg-black hover:border-white hover:text-white transition" target="_blank" rel="noopener noreferrer">Patreon</a>
+            </div>
+            </div>
         </div>
       </div>
     </main>

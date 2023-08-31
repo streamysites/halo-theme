@@ -4,14 +4,14 @@ import logo from "../../../public/streamy-logo.webp";
 
 export default async function Navbar() {
   return (
-    <nav className="flex justify-center w-full fixed top-0 z-10">
-      <div className="flex items-center max-w-6xl w-full justify-between border-b-2 border-[#dac59a] py-6">
+    <nav className="flex justify-center w-full fixed top-0 z-[100] bg-black">
+      <div className="flex items-center max-w-6xl w-full justify-between border-b-2 border-black py-6">
         <div>
           <Link href="/" className="text-white">
             <Image src={logo} alt="Streamy Logo" width={25} height={25} />
           </Link>
         </div>
-        <h1 className="font-quattrocento text-white uppercase">Halo Theme</h1>
+        <h1 className="font-quattrocento text-indigo-300 uppercase">Halo Theme</h1>
         <div>
           <Link href="/" className="text-white">
           <svg

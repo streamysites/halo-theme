@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Quattrocento, Quattrocento_Sans } from 'next/font/google'
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const inter = Inter({ subsets: ['latin'] })
 const quattrocento = Quattrocento({weight: "400", subsets: ['latin'], variable: "--font-quattrocento"})
@@ -19,11 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${quattrocento.variable} ${quattrocentoSans.variable} bg-[#ffe5b4] font-quattrocento-sans`}>
+      <body className={`${quattrocento.variable} ${quattrocentoSans.variable} bg-[#f5f5f5] font-quattrocento-sans`}>
         <Navbar />
         <main>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   )
