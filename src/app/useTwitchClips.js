@@ -14,9 +14,9 @@ const useTwitchClips = async (username) => {
     const data = await response.json();
     return data;
   }
-  console.log(broadcasterID)
+  // console.log(broadcasterID)
   const twitchClipsData = await twitchClips(broadcasterID);
-  console.log(twitchClipsData);
+  // console.log(twitchClipsData);
   return twitchClipsData.data;
 }
 

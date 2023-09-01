@@ -30,12 +30,14 @@ export default async function Home() {
   })
   const data = await res.json()
   const siteInfo = await data?.[0];
+  const subDomain = await siteInfo?.subdomain;
   console.log(siteInfo)
+  console.log(subDomain)
 
 
     // const broadcasterID = await useBroadcasterID("splixter");
     const twitchClips = await useTwitchClips("splixter");
-    console.log(twitchClips);
+    // console.log(twitchClips);
     // console.log(broadcasterID)
 
   return (
@@ -77,7 +79,7 @@ export default async function Home() {
         </div>
         <div className="flex flex-col w-full">
           <h3 className="font-quattrocento text-6xl py-8">Latest Twitch Clips</h3>
-          <TwitchClips twitchClips={twitchClips} />
+          <TwitchClips twitchClips={twitchClips} subdomain={subDomain} />
 
 
 

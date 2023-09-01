@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-export default function TwitchClips({ twitchClips }) {
+export default function TwitchClips({ twitchClips, subdomain }) {
   const [twitchClipPlayerOpen, setTwitchClipPlayerOpen] = useState(false);
   const [currentTwitchClip, setCurrentTwitchClip] = useState(null);
 
@@ -24,7 +24,7 @@ export default function TwitchClips({ twitchClips }) {
           className="flex items-center justify-center fixed top-0 inset-0 w-screen h-screen bg-black z-[105] bg-opacity-75"
         >
           <iframe
-            src={`${currentTwitchClip.embed_url}&parent=streamy.pro`}
+            src={`${currentTwitchClip.embed_url}&parent=${subdomain}.streamy.pro`}
             height="720"
             width="1280"
             allowFullScreen
