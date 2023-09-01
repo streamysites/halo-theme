@@ -36,6 +36,7 @@ export default async function Home() {
   const siteInfo = await data?.[0];
   const subDomain = await siteInfo?.subdomain;
   const twitchChannelName = await siteInfo?.twitch_channel_name;
+  const youtubeChannelName = await siteInfo?.youtube_channel_name;
   console.log(siteInfo)
   console.log(subDomain)
 
@@ -75,7 +76,7 @@ export default async function Home() {
           <h3 className="font-quattrocento text-6xl py-8">Latest Youtube Videos</h3>
           <iframe id="ytplayer"
           className="w-full h-[500px]"
-            src={`https://www.youtube.com/embed?listType=user_uploads&list=${siteInfo?.youtube_channel_name}`}
+            src={`https://www.youtube.com/embed?listType=user_uploads&list=${siteInfo?.youtubeChannelName}`}
             >  
           </iframe>
           {/* <YoutubeVideos /> */}
