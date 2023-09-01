@@ -76,7 +76,7 @@ export default async function Home() {
           <h3 className="font-quattrocento text-6xl py-8">Latest Youtube Videos</h3>
           <iframe id="ytplayer"
           className="w-full h-[500px]"
-            src={`https://www.youtube.com/embed?listType=user_uploads&list=${siteInfo?.youtubeChannelName}`}
+            src={`https://www.youtube.com/embed?listType=user_uploads&list=${youtubeChannelName}`}
             >  
           </iframe>
           {/* <YoutubeVideos /> */}
