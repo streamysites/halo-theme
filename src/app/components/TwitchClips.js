@@ -24,7 +24,7 @@ export default function TwitchClips({ twitchClips }) {
           className="flex items-center justify-center fixed top-0 inset-0 w-screen h-screen bg-black z-[105] bg-opacity-75"
         >
           <iframe
-            src={`${currentTwitchClip.embed_url}&parent=192.168.1.100`}
+            src={`${currentTwitchClip.embed_url}&parent=streamy.pro`}
             height="720"
             width="1280"
             allowFullScreen
