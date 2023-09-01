@@ -5,6 +5,7 @@ import YoutubeVideos from "./components/YoutubeVideos";
 import TwitchClips from "./components/TwitchClips";
 import useBroadcasterID from "./useBroadcasterID";
 import useTwitchClips from "./useTwitchClips";
+import ContactForm from "./components/ContactForm";
 
 
 
@@ -27,16 +28,20 @@ export default async function Home() {
       body: JSON.stringify({
         "user_id": process.env.STREAMY_USER_ID,
       }),
+      next: {
+        revalidate: 1,
+      },
   })
   const data = await res.json()
   const siteInfo = await data?.[0];
   const subDomain = await siteInfo?.subdomain;
+  const twitchChannelName = await siteInfo?.twitch_channel_name;
   console.log(siteInfo)
   console.log(subDomain)
 
 
     // const broadcasterID = await useBroadcasterID("splixter");
-    const twitchClips = await useTwitchClips("splixter");
+    const twitchClips = await useTwitchClips(twitchChannelName);
     // console.log(twitchClips);
     // console.log(broadcasterID)
 
@@ -97,6 +102,14 @@ export default async function Home() {
             </div>
             </div>
         </div>
+
+        <div className="flex flex-col w-full mb-4">
+          <h3 className="font-quattrocento text-6xl py-8">Contact Me</h3>
+          <ContactForm /> 
+        </div>
+
+
+
       </div>
     </main>
   );
