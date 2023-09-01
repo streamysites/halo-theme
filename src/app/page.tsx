@@ -29,7 +29,7 @@ export default async function Home() {
       }),
   })
   const data = await res.json()
-  const siteInfo = await data[0];
+  const siteInfo = await data?.[0];
   console.log(siteInfo)
 
 
