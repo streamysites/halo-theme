@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${quattrocento.variable} ${quattrocentoSans.variable} bg-[#f5f5f5] font-quattrocento-sans`}>
-        <Navbar />
+        {/* <Navbar /> */}
         <main>
           {children}
         </main>

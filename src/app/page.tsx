@@ -5,7 +5,10 @@ import YoutubeVideos from "./components/YoutubeVideos";
 import TwitchClips from "./components/TwitchClips";
 import useBroadcasterID from "./useBroadcasterID";
 import useTwitchClips from "./useTwitchClips";
+import useTwitchChannelInfo from "./useTwitchChannelInfo";
+import useGameInfo from "./useGameInfo";
 import ContactForm from "./components/ContactForm";
+import { channel } from "diagnostics_channel";
 
 
 
@@ -37,6 +40,18 @@ export default async function Home() {
   const subDomain = await siteInfo?.subdomain;
   const twitchChannelName = await siteInfo?.twitch_channel_name;
   const youtubeChannelName = await siteInfo?.youtube_channel_name;
+  const colors = JSON.parse(await siteInfo?.color_scheme);
+  // const channelInfo = await useTwitchChannelInfo(twitchChannelName);
+  // const gameID = channelInfo[0]?.game_id;
+  // const gameInfo = await useGameInfo(gameID[0]);
+  // const boxArtURL = gameInfo?.box_art_url;
+
+  // console.log(gameID)
+  // console.log(gameInfo)
+  // console.log(boxArtURL)
+  console.log("---")
+  console.log(colors)
+  console.log("---")
   console.log(siteInfo)
   console.log(subDomain)
 
@@ -48,7 +63,7 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between w-full">
-      <HeroSection />
+      <HeroSection subDomain={subDomain} twitchChannelName="thisismatt" />
       <div className="flex flex-col w-full items-center max-w-6xl">
         <div className="flex flex-col w-full">
         <h3 className="font-quattrocento text-6xl py-8">About</h3>
@@ -76,7 +91,7 @@ export default async function Home() {
           <h3 className="font-quattrocento text-6xl py-8">Latest Youtube Videos</h3>
           <iframe id="ytplayer"
           className="w-full h-[500px]"
-            src={`https://www.youtube.com/embed?listType=user_uploads&list=${youtubeChannelName}`}
+            src={`https://www.youtube.com/embed?listType=user_uploads&list=GamersNexus`}
             >  
           </iframe>
           {/* <YoutubeVideos /> */}
