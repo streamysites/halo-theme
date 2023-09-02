@@ -25,12 +25,13 @@ export default function HeroSection({subDomain, twitchChannelName}) {
     </div> */}
       <div className='w-full rounded-[100px] px-12 h-[calc(100vh-200px)] overflow-hidden flex'>
         <iframe
-        src={`https://player.twitch.tv/?channel=${twitchChannelName}&parent=localhost`}
-        className='w-full h-full'
-        allowFullScreen>
+          src={process.env.NODE_ENV === "development" ? `https://player.twitch.tv/?channel=${twitchChannelName}&parent=localhost` : `https://player.twitch.tv/?channel=${twitchChannelName}&parent=${subDomain}.streamy.pro`}
+          className='w-full h-full'
+          allowFullScreen>
         </iframe>
-        <iframe src={`https://www.twitch.tv/embed/${twitchChannelName}/chat?darkpopout&parent=localhost`}
-            className='w-[400px] h-full'
+        <iframe 
+          src={process.env.NODE_ENV === "development" ? `https://www.twitch.tv/embed/${twitchChannelName}/chat?darkpopout&parent=localhost` : `https://www.twitch.tv/embed/${twitchChannelName}/chat?darkpopout&parent=${subDomain}.streamy.pro` }
+          className='w-[400px] h-full'
           >
         </iframe>
       </div>
