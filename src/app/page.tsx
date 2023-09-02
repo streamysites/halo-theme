@@ -5,8 +5,8 @@ import YoutubeVideos from "./components/YoutubeVideos";
 import TwitchClips from "./components/TwitchClips";
 import useBroadcasterID from "./useBroadcasterID";
 import useTwitchClips from "./useTwitchClips";
-import useTwitchChannelInfo from "./useTwitchChannelInfo";
-import useGameInfo from "./useGameInfo";
+// import useTwitchChannelInfo from "./useTwitchChannelInfo";
+// import useGameInfo from "./useGameInfo";
 import ContactForm from "./components/ContactForm";
 import { channel } from "diagnostics_channel";
 
