@@ -63,7 +63,7 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between w-full">
-      <HeroSection subDomain={subDomain} twitchChannelName="thisismatt" />
+      <HeroSection subDomain={subDomain} twitchChannelName={twitchChannelName} />
       <div className="flex flex-col w-full items-center max-w-6xl">
         <div className="flex flex-col w-full">
         <h3 className="font-quattrocento text-6xl py-8">About</h3>
